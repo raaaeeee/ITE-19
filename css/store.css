@@ -1,0 +1,163 @@
+/* Puregold Theme Styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f1f1f1;
+  overflow-x: hidden;
+}
+
+.navbar-puregold {
+  background-color: #013a30;
+  color: #dfe101;
+}
+
+.navbar-puregold .navbar-brand {
+  font-weight: bold;
+  color: #dfe101;
+}
+
+.navbar-puregold .nav-link {
+  color: #dfe101;
+}
+
+.navbar-puregold .nav-link:hover {
+  color: #f1f1f1;
+}
+
+.navbar-puregold .dropdown-item:hover {
+  background-color: #f1f1f1;
+}
+
+.navbar-toggler-icon {
+  background-color: #fff;
+}
+
+.btn-outline {
+  color: #ffcc00;
+  border-color: #ffcc00;
+}
+
+.btn-outline:hover {
+  background-color: #013a30;
+  color: #fff;
+}
+
+.btn-puregold {
+  background-color: #013a30;
+  border: none;
+  color: #dfe101;
+}
+
+.btn-puregold:hover {
+  color: #013a30;
+  background-color: #dfe101;
+}
+
+/* Modal Customization */
+.modal-content {
+  border-radius: 10px;
+}
+
+.modal-header {
+  background-color: #013a30;
+  color: #fff;
+}
+
+.modal-body {
+  background-color: #fff;
+}
+
+.form-label {
+  font-weight: bold;
+}
+
+.form-control {
+  border-radius: 5px;
+}
+/* Grid layout for the products */
+#productContainer {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%; /* Ensure the card takes up the full height of its container */
+  padding: 20px;
+}
+.product-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 5 columns in a row */
+  gap: 16px;
+}
+
+@media (max-width: 1200px) {
+  .product-row {
+    grid-template-columns: repeat(3, 1fr); /* 4 columns on medium screens */
+  }
+}
+
+@media (max-width: 992px) {
+  .product-row {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .product-row {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+  }
+}
+
+@media (max-width: 576px) {
+  .product-row {
+    grid-template-columns: 1fr; /* 1 column on very small screens */
+  }
+}
+/* Styling for the product cards */
+.card {
+  background-color: #013a30;
+  color: #dfe101;
+  border: 1px solid #ddd; /* Light border */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition on hover */
+  overflow: hidden; /* Prevent content overflow */
+}
+
+/* Hover effects */
+.card:hover {
+  transform: translateY(-5px); /* Lift the card up */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+}
+
+/* Card body styling */
+.card-body {
+  padding: 20px; /* Space inside the card */
+  background-color: #fff; /* White background */
+}
+
+/* Title styling */
+.card-title {
+  font-size: 1.25rem; /* Font size for the title */
+  font-weight: 600; /* Slightly bold title */
+  color: #333; /* Dark text color */
+  margin-bottom: 10px; /* Space below the title */
+}
+
+/* Text for quantity and brand */
+.card-text {
+  font-size: 1rem; /* Slightly smaller text */
+  color: #666; /* Lighter text color */
+  margin-bottom: 8px; /* Space between text */
+}
+
+/* Style for the card link (optional) */
+.card-link {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Keep the card text color */
+}
+
+/* Styling for the hover effect on the card link */
+.card-link:hover {
+  color: #007bff; /* Blue color on hover */
+}

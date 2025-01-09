@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/custom.css" />
+    <title>Puregold</title>
+  </head>
+  <body class="index">
+    <div class="index">
+      <img
+        src="assets/img/logo.png"
+        alt="Puregold Official Seal"
+        class="seal"
+      />
+      <div class="index_buttons">
+        <button class="index_btn" onclick="admin()">ADMIN</button>
+        <button class="index_btn" onclick="vendor()">VENDOR</button>
+      </div>
+    </div>
+
+    <script>
+      function admin() {
+        window.location.href = "login.html";
+      }
+
+      function vendor() {
+        window.location.href = "vendor_login.html";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,205 @@
+body {
+  background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
+}
+
+#layoutSidenav {
+  display: flex;
+}
+
+.side-nav-card {
+  background-color: #013a30;
+  color: #fff;
+  width: 180px;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.sidebar-header {
+  text-align: center;
+  margin-bottom: 30px;
+  background-color: #ffffff; /* White background for the image container */
+  padding: 0px; /* Optional padding to add space around the image */
+  border-radius: 20px;
+}
+
+.user-image {
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
+}
+
+.user-info {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.sb-sidenav-menu .nav-link {
+  color: #dfe101;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.sb-sidenav-menu .nav-link:hover {
+  background-color: #dfe101;
+  color: #013a30;
+  border-radius: 5px;
+}
+
+.logout {
+  background-color: transparent;
+  color: #dfe101;
+  border: none;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.logout:hover {
+  background-color: #dfe101;
+  color: #013a30;
+  border-radius: 5px;
+}
+
+.container-fluid {
+  padding: 20px;
+}
+
+.summary-card {
+  background-color: #dfe101;
+  color: #013a30;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%; /* Ensure the card takes up the full height of its container */
+  padding: 20px;
+}
+
+.summary-card .custom-icon {
+  font-size: 2.5rem;
+  color: #013a30;
+}
+
+.dash_btn {
+  display: block;
+  background-color: #013a30;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  width: 150px;
+}
+
+.dash_btn:hover {
+  background-color: #fff;
+  color: #013a30;
+  border: 2px solid #013a30;
+}
+
+.row.mt-5 {
+  display: flex;
+  justify-content: space-between; /* Ensure the cards are aligned horizontally */
+}
+
+.col-md-6 {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.card {
+  width: 100%;
+}
+
+.card-link {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit the color of the surrounding text */
+}
+
+/* Optional: Ensure the cursor appears as a pointer when hovering over the clickable area */
+.card-link:hover {
+  color: #013a30;
+  cursor: pointer;
+}
+.modal-footer .btn-secondary {
+  background-color: #dfe101; /* Yellow background for 'Close' button */
+  color: #013a30; /* Dark green text */
+  border: none;
+}
+
+.modal-footer .btn-secondary:hover {
+  background-color: #013a30; /* Dark green background on hover */
+  color: #fff; /* White text on hover */
+}
+
+.modal-footer .btn-primary {
+  background-color: #013a30; /* Dark green background for 'Save Store' button */
+  color: #fff; /* White text */
+  border: none;
+}
+
+.modal-footer .btn-primary:hover {
+  background-color: #dfe101; /* Yellow background on hover */
+  color: #013a30; /* Dark green text on hover */
+}
+
+/* Container for the buttons */
+.store-btn-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px; /* Adjust the gap and positioning as needed */
+}
+
+/* General button styling */
+.store-btn {
+  width: 120px; /* Adjust the width for better button spacing */
+  height: 45px; /* A bit taller for a more comfortable click area */
+  font-size: 16px; /* Increase font size for better readability */
+  border: none;
+  border-radius: 5px; /* Slightly rounded corners */
+  font-weight: bold;
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Save button */
+.save-btn {
+  background-color: #013a30;
+  color: #dfe101;
+  border: 2px solid #013a30;
+}
+
+.save-btn:hover {
+  background-color: #0c4e3d; /* Darken on hover */
+  color: #ffffff; /* Make text white when hovered */
+  border-color: #0c4e3d; /* Same border color when hovered */
+}
+
+/* Close button */
+.close-btn {
+  background-color: #dfe101;
+  color: #013a30;
+  border: 2px solid #dfe101;
+}
+
+.close-btn:hover {
+  background-color: #c4b800; /* Darken on hover */
+  color: #ffffff; /* Make text white when hovered */
+  border-color: #c4b800; /* Same border color when hovered */
+}
+
+/* Optional: You can add focus styles if needed */
+.store-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 57, 30, 0.5); /* A subtle focus effect */
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="Healthy Barrio Login" />
+    <meta name="author" content="Healthy Barrio Team" />
+
+    <title>Puregold | Login</title>
+
+    <link rel="icon" type="image/x-icon" href="/assets/img/logo.png" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/custom.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Success Notification -->
+    <div id="successNotification" class="notification success"></div>
+
+    <!-- Error Notification -->
+    <div id="errorNotification" class="notification error"></div>
+
+    <div
+      class="d-flex justify-content-center align-items-center"
+      style="height: 100%"
+    >
+      <div class="card">
+        <div class="card-header">
+          <h3>Login</h3>
+        </div>
+        <div class="card-body">
+          <form id="form_login">
+            <div class="form-floating mb-3">
+              <input
+                class="form-control"
+                id="username"
+                type="text"
+                name="username"
+                placeholder="Username"
+                required
+              />
+              <label for="username">Username</label>
+              <div class="invalid-feedback">Please enter your username.</div>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input
+                class="form-control"
+                id="password"
+                name="password"
+                type="password"
+                placeholder="Password"
+                required
+              />
+              <label for="password">Password</label>
+              <div class="invalid-feedback">Please enter your password.</div>
+            </div>
+
+            <div class="d-grid mt-4 mb-0">
+              <button class="login_btn" type="submit" id="loginButton">
+                Login
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="/js/auth/login.js"></script>
+  </body>
+</html>

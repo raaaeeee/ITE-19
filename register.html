@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="Healthy Barrio Registration" />
+    <meta name="author" content="Healthy Barrio Team" />
+
+    <title>Puregold | Register</title>
+
+    <link rel="icon" type="image/x-icon" href="/assets/img/logo.png" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/custom.css" rel="stylesheet" />
+    <script type="module" src="/js/auth/register.js"></script>
+  </head>
+  <body>
+    <div
+      class="d-flex justify-content-center align-items-center"
+      style="height: 100%"
+    >
+      <div class="card">
+        <div class="card-header">
+          <h3>Register</h3>
+        </div>
+        <div class="card-body">
+          <form id="form_register">
+            <!-- Input Fields -->
+            <div class="form-floating mb-3">
+              <input
+                class="form-control"
+                id="name"
+                type="text"
+                name="name"
+                placeholder="Name"
+                required
+              />
+              <label for="name">Name</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input
+                class="form-control"
+                id="address"
+                type="text"
+                name="address"
+                placeholder="Address"
+                required
+              />
+              <label for="address">Address</label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input
+                class="form-control"
+                id="contact_no"
+                name="contact_no"
+                type="text"
+                placeholder="Contact Number"
+                required
+              />
+              <label for="contact_no">Contact Number</label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input
+                class="form-control"
+                id="email"
+                name="email"
+                type="email"
+                placeholder="Email"
+                required
+              />
+              <label for="email">Email Address</label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input
+                class="form-control"
+                id="password"
+                name="password"
+                type="password"
+                placeholder="Password"
+                required
+              />
+              <label for="password">Password</label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input
+                class="form-control"
+                id="password_confirmation"
+                name="password_confirmation"
+                type="password"
+                placeholder="Confirm Password"
+                required
+              />
+              <label for="password_confirmation">Confirm Password</label>
+            </div>
+
+            <div class="d-grid mt-4 mb-0">
+              <button class="login_btn" type="submit" id="registerButton">
+                Register
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="card-footer">
+          <div class="small">
+            Already have an account? <a href="login.html">Login here!</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
