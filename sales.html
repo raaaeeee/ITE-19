@@ -9,7 +9,7 @@
     />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Puregold| Dashboard</title>
+    <title>Puregold | Sales</title>
 
     <link
       href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css"
@@ -25,6 +25,8 @@
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       crossorigin="anonymous"
     ></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
 
   <body>
@@ -78,10 +80,8 @@
               <div class="col-md-12">
                 <div class="card summary-card">
                   <div class="card-body">
-                    <!-- Store Container -->
-                    <div class="row mt-4" id="storeContainer">
-                      <!-- Store cards will be dynamically generated here -->
-                    </div>
+                    <!-- Sales Container -->
+                    <div class="row mt-4" id="salesContainer"></div>
                   </div>
                 </div>
               </div>
@@ -90,6 +90,6 @@
         </main>
       </div>
     </div>
-    <script type="module" src="/js/system/inventory.js"></script>
+    <script type="module" src="/js/system/sales.js"></script>
   </body>
 </html>

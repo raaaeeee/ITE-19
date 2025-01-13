@@ -41,7 +41,7 @@ async function getProducts(storeId, productTypeId, query = "") {
 
   try {
     const response = await fetch(
-      `${backendURL}/api/store/${storeId}/product-type/${productTypeId}/products${
+      `${backendURL}/api/store/${storeId}/products${
         query ? `?search=${query}` : ""
       }`,
       {

@@ -9,14 +9,14 @@
     />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Puregold| Dashboard</title>
+    <title>Puregold | Dashboard</title>
 
     <link
       href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css"
       rel="stylesheet"
     />
     <link href="css/styles.css" rel="stylesheet" />
-    <link href="css/dashboard.css" rel="stylesheet" />
+    <link href="css/vendor.css" rel="stylesheet" />
     <script
       src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
       crossorigin="anonymous"
@@ -33,30 +33,15 @@
       <div class="dash_card side-nav-card">
         <nav class="sb-sidenav" id="sidenavAccordion">
           <div class="sidebar-header">
-            <img
-              src="assets/img/logo.png"
-              height="100px"
-              width="100px"
-              alt=""
-            />
             <div id="user_logged" class="user-info"></div>
           </div>
           <div class="sb-sidenav-menu">
-            <a class="nav-link active" href="dashboard.html">
+            <a class="nav-link active" href="vendor_dashboard.html">
               <i class="fa-solid fa-table-columns"></i> Dashboard
             </a>
             <div id="nav_admin_pages"></div>
-            <a class="nav-link" href="inventory.html">
-              <i class="fa-solid fa-warehouse"></i> Inventory
-            </a>
-            <a class="nav-link" href="sales.html">
+            <!-- <a class="nav-link" href="vendor_sales.html">
               <i class="fa-solid fa-clock-rotate-left"></i> Sales
-            </a>
-            <a class="nav-link" href="purchase.html">
-              <i class="fa-solid fa-shop"></i> Purchase
-            </a>
-            <!-- <a class="nav-link" href="customer.html">
-              <i class="fa-solid fa-person"></i> Customer Point System
             </a> -->
             <button id="btn_logout" class="logout">
               <i class="fa-solid fa-sign-out-alt"></i> Logout
@@ -65,6 +50,17 @@
         </nav>
       </div>
 
+      <!-- Add these notification elements within the body or a relevant container -->
+      <div
+        id="successNotification"
+        class="alert alert-success d-none"
+        role="alert"
+      ></div>
+      <div
+        id="errorNotification"
+        class="alert alert-danger d-none"
+        role="alert"
+      ></div>
       <!-- Main Content -->
       <div id="layoutSidenav_content">
         <main>
@@ -78,9 +74,22 @@
               <div class="col-md-12">
                 <div class="card summary-card">
                   <div class="card-body">
-                    <!-- Store Container -->
-                    <div class="row mt-4" id="storeContainer">
-                      <!-- Store cards will be dynamically generated here -->
+                    <!-- Table for displaying data -->
+                    <div class="table-responsive">
+                      <table class="table table-bordered">
+                        <thead class="table-light">
+                          <tr>
+                            <th>Store Name</th>
+                            <th>Store Address</th>
+                            <th>Product</th>
+                            <th>Quantity</th>
+                            <th>Action</th>
+                          </tr>
+                        </thead>
+                        <tbody id="storeProductTable">
+                          <!-- Rows will be dynamically generated -->
+                        </tbody>
+                      </table>
                     </div>
                   </div>
                 </div>
@@ -90,6 +99,7 @@
         </main>
       </div>
     </div>
-    <script type="module" src="/js/system/inventory.js"></script>
+
+    <script type="module" src="/js/system/vendor.js"></script>
   </body>
 </html>

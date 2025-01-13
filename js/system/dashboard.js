@@ -39,17 +39,17 @@ async function getStores(query = "") {
       let cardHTML = "";
       stores.forEach((store) => {
         cardHTML += `
-          <div class="col-12 col-md-3 mb-4">
-            <a href="store.html?id=${store.store_id}" class="card-link">
-              <div class="card" style="width: 18rem;" data-id="${store.id}">
-                <div class="card-body">
-                  <h5 class="card-title mb-2">${store.store_name}</h5>
-                  <p class="card-text mb-2">${store.store_address}</p>
-                  <p class="card-text">${store.operating_hours}</p>
-                </div>
-              </div>
-            </a>
-          </div>`;
+  <div class="col-12 col-md-3 mb-4">
+    <a href="parent_type.html?id=${store.store_id}" class="card-link">
+      <div class="card" style="width: 18rem; background-color: #013a30; color: #dfe101;" data-id="${store.id}">
+        <div class="card-body">
+          <h5 class="card-title mb-2">${store.store_name}</h5>
+          <p class="card-text mb-2">${store.store_address}</p>
+          <p class="card-text">${store.operating_hours}</p>
+        </div>
+      </div>
+    </a>
+  </div>`;
       });
       storeContainer.innerHTML = cardHTML;
     } else {

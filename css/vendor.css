@@ -1,0 +1,167 @@
+/* General Styles */
+body {
+  background-color: #f4f4f4; /* Softer light gray background */
+  font-family: Arial, sans-serif;
+  font-size: 16px; /* Base font size */
+  line-height: 1.6; /* Improve readability */
+  margin: 0;
+  color: #333333; /* Neutral dark gray text */
+}
+
+/* Main Layout */
+#layoutSidenav {
+  display: flex;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* Sidebar */
+.side-nav-card {
+  background-color: #2f3e46; /* Dark muted blue-gray */
+  color: #e0e0e0; /* Light gray text */
+  width: 220px; /* Wider sidebar */
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.sidebar-header {
+  text-align: center;
+  margin-bottom: 30px;
+  background-color: #ffffff; /* White background for contrast */
+  padding: 10px;
+  border-radius: 20px;
+  margin-top: 20px; /* Adjusted margin for better alignment */
+}
+
+.sidebar-header img {
+  width: 80%; /* Resize image for better fit */
+  border-radius: 50%;
+}
+
+/* Navigation Links */
+.nav-link {
+  display: flex;
+  align-items: center; /* Vertically center the icon and text */
+  justify-content: start;
+  width: 100%;
+  padding: 12px 18px;
+  font-size: 18px;
+  color: #e0e0e0;
+  background-color: transparent;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+  margin-bottom: 10px; /* Added margin between links */
+}
+
+.nav-link i {
+  margin-right: 10px; /* Space between icon and text */
+  font-size: 20px; /* Icon size */
+  line-height: 1; /* Prevent unwanted vertical spacing */
+  vertical-align: middle; /* Align icon with text */
+}
+
+.nav-link:hover {
+  background-color: #3a4a51;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.nav-link.active {
+  background-color: #556b73;
+  color: #ffffff;
+}
+
+/* Logout Button */
+.logout {
+  display: flex;
+  align-items: center; /* Vertically center the icon and text */
+  justify-content: start;
+  width: 100%;
+  padding: 12px 18px;
+  font-size: 18px;
+  color: #e0e0e0;
+  background-color: transparent;
+  border: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.logout i {
+  margin-right: 10px; /* Space between icon and text */
+  font-size: 20px; /* Icon size */
+  line-height: 1; /* Prevent unwanted vertical spacing */
+  vertical-align: middle; /* Align icon with text */
+}
+
+.logout:hover {
+  background-color: #3a4a51;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* Main Content */
+#layoutSidenav_content {
+  flex-grow: 1;
+  overflow-y: auto;
+  background-color: #ffffff;
+  padding: 20px; /* Space around content */
+}
+
+.container-fluid {
+  padding: 2rem;
+}
+
+/* Sticky Header */
+.timestamp {
+  font-size: 18px;
+  color: #666666;
+  margin-top: 10px; /* Added margin for spacing */
+}
+
+.sticky-header {
+  position: sticky;
+  top: 0;
+  background: #ffffff;
+  padding: 1rem 0;
+  border-bottom: 1px solid #e0e0e0;
+  z-index: 10;
+}
+
+/* Sales Cards Container */
+#salesContainer {
+  margin-top: 20px; /* Spacing between sales cards */
+}
+
+#salesContainer .card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  margin-bottom: 20px; /* Added margin between cards */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .side-nav-card {
+    width: 180px;
+  }
+
+  .nav-link,
+  .logout {
+    font-size: 16px;
+    padding: 10px 15px;
+  }
+
+  .timestamp {
+    font-size: 16px;
+  }
+
+  .container-fluid {
+    padding: 1rem;
+  }
+
+  #salesContainer {
+    margin-top: 10px;
+  }
+}

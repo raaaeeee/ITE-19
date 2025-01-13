@@ -113,6 +113,16 @@ body {
     grid-template-columns: 1fr; /* 1 column on very small screens */
   }
 }
+
+.custom-modal-button {
+  background-color: #013a30;
+  color: #fff;
+}
+
+.custom-modal-button:hover {
+  background-color: #dfe101;
+  color: #013a30;
+}
 /* Styling for the product cards */
 .card {
   background-color: #013a30;
@@ -160,4 +170,8 @@ body {
 /* Styling for the hover effect on the card link */
 .card-link:hover {
   color: #007bff; /* Blue color on hover */
+}
+#storeChart {
+  width: 500px;
+  height: 500px;
 }

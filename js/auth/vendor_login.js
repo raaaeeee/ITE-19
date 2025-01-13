@@ -35,13 +35,13 @@ document.getElementById("form_login").onsubmit = async (e) => {
 
         // Save token and vendor ID
         localStorage.setItem("token", token);
-        localStorage.setItem("vendor_id", vendorData.user_id);
+        localStorage.setItem("vendor_id", vendorData.vendor_id);
 
         // Show success notification and redirect
         successNotification("Login successful. Redirecting to dashboard...");
         e.target.reset();
         setTimeout(() => {
-          window.location.replace("/dashboard.html");
+          window.location.replace("/vendor_dashboard.html");
         }, 1500);
       } else {
         errorNotification("Login failed. Token or vendor data not found.");

@@ -72,7 +72,6 @@ body {
 }
 
 .summary-card {
-  background-color: #dfe101;
   color: #013a30;
   border: none;
   border-radius: 10px;
@@ -101,7 +100,7 @@ body {
 }
 
 .dash_btn:hover {
-  background-color: #fff;
+  background-color: #dfe101;
   color: #013a30;
   border: 2px solid #013a30;
 }
