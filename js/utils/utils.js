@@ -4,16 +4,16 @@ import { setRouter } from "../router/router.js";
 setRouter();
 
 // Backend URL
-const backendURL = "http://my-project.test";
+const backendURL = "http://19.test";
 
 // Logout function
 export async function logout() {
   try {
-    const response = await fetchWithAuth(`${backendURL}/api/logout`);
+    const response = await fetchWithAuth(`${backendURL}/api/logout`); //pag e click ang logout papaon ang token
     if (response.ok) {
       localStorage.clear();
       successNotification("Logout Successful.");
-      window.location.pathname = "/";
+      window.location.pathname = "/";  //index
     } else {
       const json = await response.json();
       errorNotification(`Logout failed: ${json.message}`, 10);

@@ -8,9 +8,9 @@ body {
 }
 
 .side-nav-card {
-  background-color: #013a30;
+  background-color:#054003;
   color: #fff;
-  width: 180px;
+  width: 220px;
   min-height: 100vh;
   padding: 20px;
 }
@@ -18,9 +18,10 @@ body {
 .sidebar-header {
   text-align: center;
   margin-bottom: 30px;
-  background-color: #ffffff; /* White background for the image container */
-  padding: 0px; /* Optional padding to add space around the image */
+  background-color: #ffffff; /* White background for contrast */
+  padding: 10px;
   border-radius: 20px;
+  margin-top: 20px; /* Adjusted margin for better alignment */
 }
 
 .user-image {
@@ -33,38 +34,70 @@ body {
   margin-top: 10px;
   font-weight: bold;
 }
-
-.sb-sidenav-menu .nav-link {
-  color: #dfe101;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
+.sidebar-header img {
+  width: 80%; /* Resize image for better fit */
+  border-radius: 0%;
 }
-
-.sb-sidenav-menu .nav-link:hover {
+.nav-link.active {
+  background-color:#054003;
+  color: #ffffff;
+}
+.nav-link.nav-link.active:hover {
   background-color: #dfe101;
   color: #013a30;
-  border-radius: 5px;
+  cursor: pointer;
+}
+.nav-link {
+  display: flex;
+  align-items: center; /* Vertically center the icon and text */
+  justify-content: start;
+  width: 100%;
+  padding: 12px 18px;
+  font-size: 18px;
+  color: #e0e0e0;
+  background-color: transparent;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+  margin-bottom: 10px; /* Added margin between links */
+}
+.nav-link i {
+  margin-right: 10px; /* Space between icon and text */
+  font-size: 20px; /* Icon size */
+  line-height: 1; /* Prevent unwanted vertical spacing */
+  vertical-align: middle; /* Align icon with text */
+}
+.nav-link:hover {
+  background-color: #dfe101;
+  color: #013a30;
+  cursor: pointer;
 }
 
+
 .logout {
-  background-color: transparent;
-  color: #dfe101;
-  border: none;
-  padding: 10px;
   display: flex;
-  align-items: center;
-  gap: 10px;
-  cursor: pointer;
-  text-decoration: none;
+  align-items: center; /* Vertically center the icon and text */
+  justify-content: start;
+  width: 100%;
+  padding: 12px 18px;
+  font-size: 18px;
+  color: #e0e0e0;
+  background-color: transparent;
+  border: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.logout i {
+  margin-right: 10px; /* Space between icon and text */
+  font-size: 20px; /* Icon size */
+  line-height: 1; /* Prevent unwanted vertical spacing */
+  vertical-align: middle; /* Align icon with text */
 }
 
 .logout:hover {
   background-color: #dfe101;
   color: #013a30;
-  border-radius: 5px;
+  cursor: pointer;
 }
 
 .container-fluid {
@@ -90,13 +123,14 @@ body {
 
 .dash_btn {
   display: block;
-  background-color: #013a30;
+  background-color: #054003;
   color: #fff;
   text-align: center;
   padding: 10px;
   border-radius: 5px;
   text-decoration: none;
   width: 150px;
+  font-size: 15px;
 }
 
 .dash_btn:hover {
@@ -173,14 +207,14 @@ body {
 
 /* Save button */
 .save-btn {
-  background-color: #013a30;
-  color: #dfe101;
-  border: 2px solid #013a30;
+  background-color: #054003;
+  color:  #ffffff;
+  border: 2px solid #054003;
 }
 
 .save-btn:hover {
-  background-color: #0c4e3d; /* Darken on hover */
-  color: #ffffff; /* Make text white when hovered */
+  background-color: #dfe101; /* Darken on hover */
+  color: #054003; /* Make text white when hovered */
   border-color: #0c4e3d; /* Same border color when hovered */
 }
 
@@ -192,7 +226,7 @@ body {
 }
 
 .close-btn:hover {
-  background-color: #c4b800; /* Darken on hover */
+  background-color: #054003; /* Darken on hover */
   color: #ffffff; /* Make text white when hovered */
   border-color: #c4b800; /* Same border color when hovered */
 }

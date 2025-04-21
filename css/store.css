@@ -6,26 +6,28 @@ body {
 }
 
 .navbar-puregold {
-  background-color: #013a30;
+  background-color: #054003;
   color: #dfe101;
+  display: flex;
+    align-items: center; /* Center items vertically */
+    height: 100px;
 }
 
 .navbar-puregold .navbar-brand {
   font-weight: bold;
-  color: #dfe101;
-}
-
-.navbar-puregold .nav-link {
-  color: #dfe101;
-}
-
-.navbar-puregold .nav-link:hover {
   color: #f1f1f1;
 }
 
-.navbar-puregold .dropdown-item:hover {
-  background-color: #f1f1f1;
+.navbar-puregold .nav-link {
+  color: #f1f1f1;
+  font-weight: bold;
+  font-size: medium;
 }
+
+.navbar-puregold .nav-link:hover {
+  color:  #dfe101;
+}
+
 
 .navbar-toggler-icon {
   background-color: #fff;
@@ -42,14 +44,38 @@ body {
 }
 
 .btn-puregold {
-  background-color: #013a30;
-  border: none;
-  color: #dfe101;
+  display: block;
+  background-color: #054003;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  width: 150px;
+  font-size: 15px;
+}
+.btn-store {
+  display: inline-block; /* Changed from 'block' to 'inline-block' to fit content */
+  background-color: #054003;
+  color: #fff;
+  text-align: center;
+  padding: 10px 15px; /* Increased padding on the left and right for more space */
+  border-radius: 5px;
+  text-decoration: none;
+  width: auto; /* Changed from fixed width to auto to adjust based on content */
+  font-size: 15px;
+  white-space: nowrap; /* Prevents text from wrapping */
 }
 
-.btn-puregold:hover {
-  color: #013a30;
+.btn-store:hover {
   background-color: #dfe101;
+  color: #013a30;
+  border: 2px solid #013a30;
+}
+.btn-puregold:hover {
+  background-color: #dfe101;
+  color: #013a30;
+  border: 2px solid #013a30;
 }
 
 /* Modal Customization */

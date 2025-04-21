@@ -2,8 +2,14 @@ import {
   backendURL,
   successNotification,
   errorNotification,
+  logout,
 } from "../utils/utils.js";
 
+// Logout Button
+const btn_logout = document.getElementById("btn_logout");
+if (btn_logout) {
+  btn_logout.addEventListener("click", logout);
+}
 // Function to load stores and their products
 async function loadStoresWithProducts() {
   const tableBody = document.getElementById("storeProductTable");

@@ -6,30 +6,30 @@ import {
 } from "../utils/utils.js";
 
 // Logout Button
-const btn_logout = document.getElementById("btn_logout");
+const btn_logout = document.getElementById("btn_logout"); 
 if (btn_logout) {
   btn_logout.addEventListener("click", logout);
 }
 
 // Fetch and display stores
 async function getStores(query = "") {
-  const storeContainer = document.getElementById("storeContainer");
+  const storeContainer = document.getElementById("storeContainer"); //id sa html
   storeContainer.innerHTML = `<div class="text-center">Loading stores...</div>`;
 
   try {
     console.log("Fetching stores...");
     const response = await fetch(
-      `${backendURL}/api/store${query ? `?search=${query}` : ""}`,
+      `${backendURL}/api/store${query ? `?search=${query}` : ""}`, //kuhaon ang mga na save stores nga naa sa database
       {
         headers: {
           Accept: "application/json",
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
+          Authorization: `Bearer ${localStorage.getItem("token")}`, 
         },
       }
     );
 
     if (response.ok) {
-      const stores = await response.json();
+      const stores = await response.json(); 
 
       if (stores.length === 0) {
         storeContainer.innerHTML = `<div class="text-center text-muted">No stores found.</div>`;
@@ -41,7 +41,7 @@ async function getStores(query = "") {
         cardHTML += `
   <div class="col-12 col-md-3 mb-4">
     <a href="parent_type.html?id=${store.store_id}" class="card-link">
-      <div class="card" style="width: 18rem; background-color: #013a30; color: #dfe101;" data-id="${store.id}">
+      <div class="card" style="width: 18rem; background-color: #054003; color:rgb(255, 255, 255);" data-id="${store.id}">
         <div class="card-body">
           <h5 class="card-title mb-2">${store.store_name}</h5>
           <p class="card-text mb-2">${store.store_address}</p>

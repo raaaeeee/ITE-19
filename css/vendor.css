@@ -17,7 +17,7 @@ body {
 
 /* Sidebar */
 .side-nav-card {
-  background-color: #2f3e46; /* Dark muted blue-gray */
+  background-color: #054003; /* Dark muted blue-gray */
   color: #e0e0e0; /* Light gray text */
   width: 220px; /* Wider sidebar */
   min-height: 100vh;
@@ -32,10 +32,19 @@ body {
   border-radius: 20px;
   margin-top: 20px; /* Adjusted margin for better alignment */
 }
+.user-image {
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
+}
 
+.user-info {
+  margin-top: 10px;
+  font-weight: bold;
+}
 .sidebar-header img {
   width: 80%; /* Resize image for better fit */
-  border-radius: 50%;
+  border-radius: 0%;
 }
 
 /* Navigation Links */
@@ -61,14 +70,14 @@ body {
   vertical-align: middle; /* Align icon with text */
 }
 
-.nav-link:hover {
-  background-color: #3a4a51;
-  color: #ffffff;
-  cursor: pointer;
-}
+.nav-link.nav-link.active:hover {
+    background-color: #dfe101;
+    color: #013a30;
+    cursor: pointer;
+  }
 
 .nav-link.active {
-  background-color: #556b73;
+  background-color:#054003;
   color: #ffffff;
 }
 
@@ -95,8 +104,8 @@ body {
 }
 
 .logout:hover {
-  background-color: #3a4a51;
-  color: #ffffff;
+  background-color: #dfe101;
+  color: #013a30;
   cursor: pointer;
 }
 

@@ -5,22 +5,23 @@ import {
   logout,
 } from "../utils/utils.js";
 
-// Fetch and display all categories on page load
+// Fetch and display all categories and handle form submission on page load  
 document.addEventListener("DOMContentLoaded", function () {
   const storeId = new URLSearchParams(window.location.search).get("id");
-  if (storeId) {
-    getCategory(storeId); // Pass the store ID to fetch categories for this store
-    updateSalesLink(storeId); // Update the sales link dynamically
-  } else {
+
+  if (!storeId) {
     errorNotification("Store ID is missing in the URL.");
+    return;
   }
+
+  getCategory(storeId); // Pass the store ID to fetch categories for this store
+  updateSalesLink(storeId); // Update the sales link dynamically
+  handleAddCategoryForm(storeId); // Initialize add category form submission
 });
 
 // Update the Sales link in the navbar with the storeId
 function updateSalesLink(storeId) {
-  const salesLink = document.querySelector(
-    '.nav-link[href="store_sales.html"]'
-  );
+  const salesLink = document.querySelector('.nav-link[href="store_sales.html"]');
   if (salesLink) {
     salesLink.href = `store_sales.html?id=${storeId}`;
   }
@@ -29,13 +30,16 @@ function updateSalesLink(storeId) {
 // Fetch categories from the backend for a specific store
 async function getCategory(storeId, query = "") {
   const productContainer = document.getElementById("parentContainer");
+  if (!productContainer) {
+    console.error("Parent container element not found.");
+    return;
+  }
+
   productContainer.innerHTML = `<div class="text-center">Loading categories...</div>`;
 
   try {
     const response = await fetch(
-      `${backendURL}/api/store/${storeId}/category${
-        query ? `?search=${query}` : ""
-      }`,
+      `${backendURL}/api/store/${storeId}/category${query ? `?search=${query}` : ''}`,
       {
         headers: {
           Accept: "application/json",
@@ -45,21 +49,21 @@ async function getCategory(storeId, query = "") {
     );
 
     if (response.ok) {
-      const parent_type = await response.json();
-      console.log("Fetched Categories:", parent_type);
+      const parentType = await response.json();
+      console.log("Fetched Categories:", parentType);
 
-      if (parent_type.length === 0) {
+      if (parentType.length === 0) {
         productContainer.innerHTML = `<div class="text-center text-muted">No categories found.</div>`;
         return;
       }
 
       let cardHTML = `<div class="row">`;
-      parent_type.forEach((type) => {
+      parentType.forEach((type) => {
         cardHTML += `
           <div class="col-12 col-md-3 mb-4">
             <div class="card product-card" style="width: 18rem;" data-id="${type.parent_type_id}" data-name="${type.name}">
-              <div class="card-body" style="background-color: #013a30; ">
-                <h5 class="card-title mb-2" style=" color: #dfe101;">${type.name}</h5>
+              <div class="card-body" style="background-color: #054003">
+                <h5 class="card-title mb-2" style="color: #dfe101;">${type.name}</h5>
               </div>
             </div>
           </div>`;
@@ -71,94 +75,83 @@ async function getCategory(storeId, query = "") {
       document.querySelectorAll(".product-card").forEach((card) => {
         card.addEventListener("click", (e) => {
           const categoryId = card.dataset.id;
-          const categoryName = card.dataset.name;
 
           // Ensure the storeId is passed to the product type page
           window.location.href = `product_type.html?category_id=${categoryId}&store_id=${storeId}`;
         });
       });
     } else {
-      errorNotification(`No categories to load: HTTP Error ${response.status}`);
-      productContainer.innerHTML = `<div class="text-center text-black">No categories to load.</div>`;
+      errorNotification(`Failed to load categories: HTTP ${response.status}`);
+      productContainer.innerHTML = `<div class="text-center text-black">No Categories to load.</div>`;
     }
   } catch (error) {
-    errorNotification(
-      "An error occurred while fetching categories: " + error.message
-    );
+    errorNotification("An error occurred while fetching categories: " + error.message);
     productContainer.innerHTML = `<div class="text-center text-danger">Error loading categories.</div>`;
   }
 }
 
-// Fetch all products from the backend for a specific store
-async function getAllProductsByStore(storeId, query = "") {
-  const productContainer = document.getElementById("productContainer");
-  if (!productContainer) {
-    console.error("Product container element not found.");
+function handleAddCategoryForm(storeId) {
+  const addCategoryForm = document.getElementById("addCategoryForm");
+  const submitButton = addCategoryForm
+    ? addCategoryForm.querySelector('button[type="submit"]')
+    : null;
+
+  if (!addCategoryForm || !submitButton) {
+    console.error("Form or submit button not found.");
     return;
   }
 
-  productContainer.innerHTML = `<div class="text-center">Loading products...</div>`;
+  addCategoryForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-  try {
-    const response = await fetch(
-      `${backendURL}/api/store/${storeId}/products${
-        query ? `?search=${query}` : ""
-      }`,
-      {
+    // Disable the submit button and show a loading spinner
+    submitButton.disabled = true;
+    submitButton.innerHTML = `<div class="spinner-border me-2" role="status"></div><span>Saving...</span>`;
+
+    // Prepare the form data
+    const formData = new FormData(addCategoryForm);
+
+    // Append the storeId explicitly to the FormData
+    formData.append("store_id", storeId);
+
+    try {
+      const response = await fetch(`${backendURL}/api/parent_type`, {
+        method: "POST",
         headers: {
           Accept: "application/json",
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
-      }
-    );
-
-    if (response.ok) {
-      const products = await response.json();
-
-      if (products.length === 0) {
-        productContainer.innerHTML = `<div class="text-center text-muted">No products found for this store.</div>`;
-        return;
-      }
-
-      let cardHTML = `<div class="row">`;
-      products.forEach((product) => {
-        cardHTML += `
-    <div class="col-12 col-md-3 mb-4">
-      <div class="card product-card" style="width: 18rem;" 
-           data-id="${product.product_id}"
-           data-name="${product.product_name}" 
-           data-price="${product.price}" 
-           data-quantity="${product.quantity}" 
-           data-description="${
-             product.description || "No description available"
-           }"
-           data-upc="${product.UPC}">
-        <div class="card-body">
-          <h5 class="card-title mb-2">${product.product_name}</h5>
-          <p class="card-text mb-2">Price: ${product.price}</p>
-          <p class="card-text mb-2">Quantity: ${product.quantity}</p>
-        </div>
-      </div>
-    </div>`;
+        body: formData, // FormData will automatically set the content type to 'multipart/form-data'
       });
-      cardHTML += `</div>`;
-      productContainer.innerHTML = cardHTML;
 
-      // Attach click events to product cards
-      document.querySelectorAll(".product-card").forEach((card) => {
-        card.addEventListener("click", (e) => {
-          const cardData = e.currentTarget.dataset;
-          showProductModal(cardData);
-        });
-      });
-    } else {
-      errorNotification(`No products to load: HTTP Error ${response.status}`);
-      productContainer.innerHTML = `<div class="text-center text-black">No products to load.</div>`;
+      if (response.ok) {
+        successNotification("Category added successfully.");
+        addCategoryForm.reset();
+
+        // Hide the modal after the form is submitted successfully
+        const modalElement = document.getElementById("addCategoryModal");
+        const modal = bootstrap.Modal.getInstance(modalElement);
+        if (modal) modal.hide();
+
+        // Refresh the category list
+        await getCategory(storeId);
+      } else if (response.status === 422) {
+        const json = await response.json();
+        const errorMessage =
+          json.errors && typeof json.errors === "object"
+            ? Object.values(json.errors).flat().join("\n")
+            : json.message || "Validation error.";
+        errorNotification(errorMessage);
+      } else {
+        const errorData = await response.json();
+        throw new Error(errorData.message || "Unexpected error occurred.");
+      }
+    } catch (error) {
+      errorNotification("An error occurred: " + error.message);
+    } finally {
+      // Re-enable the submit button and reset its content
+      submitButton.disabled = false;
+      submitButton.innerHTML = `Save Category`;
     }
-  } catch (error) {
-    errorNotification(
-      "An error occurred while fetching products: " + error.message
-    );
-    productContainer.innerHTML = `<div class="text-center text-danger">Error loading products.</div>`;
-  }
+  });
 }

@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+
 // Fetch product types for a specific category
 async function getProductTypes(categoryId) {
   const productTypeContainer = document.getElementById("productTypeContainer");
@@ -47,7 +48,7 @@ async function getProductTypes(categoryId) {
         productTypeHTML += `
      <div class="col-12 col-md-3 mb-4">
        <div class="card product-card" style="width: 18rem;" data-id="${productType.product_type_id}">
-         <div class="card-body" style="background-color: #013a30;">
+         <div class="card-body" style="background-color: #054003">
            <h5 class="card-title mb-2" style="color: #dfe101;">${productType.name}</h5>
          </div>
        </div>

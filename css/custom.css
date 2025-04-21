@@ -12,7 +12,6 @@ body {
   flex-direction: column;
   position: relative; /* Required for absolute positioning of pseudo-element */
 }
-
 body::before {
   content: "";
   position: absolute;
@@ -20,27 +19,52 @@ body::before {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url("/assets/img/puregold.jpg");
+  background-image: url("/assets/img/image.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   filter: blur(3px); /* Adjust the blur intensity */
+
   z-index: -1; /* Ensures that the image stays behind the content */
 }
 
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+.card {
+  background-color: #013a30;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  text-align: center;
+  width: 200px; /* Set a width for the card */
+}
+
+.logo {
+  margin-bottom: 20px;
+}
+
+.seal {
+  width: 100px;
+  height: auto;
+}
+
 .index_buttons {
-  margin-top: 20px;
-  display: flex; /* Use flex to align buttons side by side */
-  justify-content: center; /* Center buttons horizontally */
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Add space between buttons */
 }
 
 .index_btn {
-  display: inline-block;
-  margin: 10px; /* Adjust margin as needed */
-  padding: 10px 20px;
-  font-size: 16px;
-  color: #013a30; /* Dark green text */
-  background-color: #dfe101; /* Yellow background */
+  padding: 12px 25px;
+  font-size: 18px;
+  color: #ffffff; /* Dark green text */
+  background-color: #054003; /* Yellow background */
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -48,9 +72,10 @@ body::before {
 }
 
 .index_btn:hover {
-  background-color: #013a30;
-  color: #dfe101; /* White text on hover for contrast */
+  background-color: #284e47; /* Darker background on hover */
+  color: #fcfcf7; /* White text on hover */
 }
+
 
 /* Global Body Styling */
 
@@ -70,14 +95,14 @@ body {
   border-radius: 15px; /* Rounded corners */
   border: none; /* Remove border */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  background-color: #ffffff; /* White card background */
+  background-color:#fcfffe; /* White card background */
   width: 400px; /* Set card width */
   padding: 20px;
 }
 
 /* Card Header Styling */
 .card-header {
-  background-color: #013a30; /* Dark Green */
+  background-color: #033021; /* Dark Green */
   color: #dfe101; /* Yellow */
   border-top-left-radius: 15px; /* Rounded top corners */
   border-top-right-radius: 15px;
@@ -122,6 +147,7 @@ body {
   cursor: pointer;
   transition: background-color 0.3s ease;
   width: 100%;
+  gap: 15px;
 }
 
 .login_btn:hover {
